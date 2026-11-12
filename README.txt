@@ -1,6 +1,9 @@
 
 HEALTHFIRST PHARMACY INVENTORY MANAGEMENT SYSTEM
 
+A project by NxG Technologies
+Main logo: src/healthfirstpims/nxg-logo.png (shown on the login screen)
+
 Programming 732 Project
 Richfield Graduate Institute of Technology
 
