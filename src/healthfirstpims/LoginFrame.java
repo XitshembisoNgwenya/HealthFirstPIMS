@@ -30,9 +30,29 @@ public class LoginFrame extends JFrame {
         );
         subtitleLabel.setFont(new Font("Arial", Font.PLAIN, 16));
 
-        JPanel headingPanel = new JPanel(new GridLayout(2, 1));
-        headingPanel.add(titleLabel);
-        headingPanel.add(subtitleLabel);
+        JPanel titlePanel = new JPanel(new GridLayout(3, 1));
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 21));
+        titlePanel.add(titleLabel);
+        titlePanel.add(subtitleLabel);
+
+        JLabel brandCreditLabel = new JLabel("A project by NxG Technologies", SwingConstants.CENTER);
+        brandCreditLabel.setFont(new Font("Arial", Font.PLAIN, 11));
+        titlePanel.add(brandCreditLabel);
+
+        JLabel logoLabel = new JLabel();
+        logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        logoLabel.setToolTipText("NxG Technologies");
+        logoLabel.getAccessibleContext().setAccessibleName("NxG Technologies logo");
+        java.net.URL logoUrl = LoginFrame.class.getResource("nxg-logo.png");
+        if (logoUrl != null) {
+            ImageIcon logoSource = new ImageIcon(logoUrl);
+            Image scaledLogo = logoSource.getImage().getScaledInstance(76, 76, Image.SCALE_SMOOTH);
+            logoLabel.setIcon(new ImageIcon(scaledLogo));
+        }
+
+        JPanel headingPanel = new JPanel(new BorderLayout(14, 0));
+        headingPanel.add(logoLabel, BorderLayout.WEST);
+        headingPanel.add(titlePanel, BorderLayout.CENTER);
 
         JPanel formPanel = new JPanel(new GridLayout(2, 2, 10, 15));
 
